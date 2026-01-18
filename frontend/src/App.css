@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent body scroll if content overflows */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Apply Inter font to the body */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Keyframes for Blob Animation (as defined in App.jsx style tag) */
+/* You can move these here for better organization if you prefer */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* Apply blob animation */
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+/* Animation delays for staggered effect */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Custom Scrollbar Styling (as defined in App.jsx style tag) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #374151; /* gray-700 */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #8b5cf6; /* purple-500 */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed; /* purple-600 */
+}
+
+/* Optional: Fade-in animation for list items */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
